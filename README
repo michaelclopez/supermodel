@@ -29,6 +29,17 @@ Examples:
   Test.last
   Test.find_by_name('foo)
 
+Specify model attributes to use validations
+
+class User < SuperModel::Base
+  include SuperModel::Marshal::Model
+
+  attributes :first_name, :last_name
+
+  validates_presence_of :first_name, :last_name
+
+end
+
 You can use a random ID rather than the object ID:
   
   class Test < SuperModel::Base
